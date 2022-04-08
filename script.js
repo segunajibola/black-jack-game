@@ -6,11 +6,24 @@ let hasBlackJack = false
 let isAlive = true
 let message = ""
 let messageEl = document.getElementById("message-el")
-let sumEl = document.get
+let cardsEl = document.getElementById("cards-el")
 
-console.log(sum)
+function getRandomCard() {
+    return 5
+}
 
-if (sum <= 20) {
+function startGame() {
+    renderGame()
+}
+
+function renderGame() {
+    cardsEl.textContent = "Cards: "
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " "
+    }
+
+    sumEl
+    if (sum <= 20) {
     console.log("Do you want to draw a new card?")
 } else if (sum === 21) {
     console.log("Wahoo! You've got blackjack")
@@ -18,5 +31,8 @@ if (sum <= 20) {
     console.log("You're out of the game!")
     isAlive = false
 }
+
+}
+
 
 console.log(isAlive)

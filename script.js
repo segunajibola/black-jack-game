@@ -22,17 +22,22 @@ function renderGame() {
         cardsEl.textContent += cards[i] + " "
     }
 
-    sumEl
+    sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
-    console.log("Do you want to draw a new card?")
-} else if (sum === 21) {
-    console.log("Wahoo! You've got blackjack")
-} else {
-    console.log("You're out of the game!")
+    message = "Do you want to draw a new card?"
+    } else if (sum === 21) {
+        message = "You've got blackjack"
+    } else {
+    message = "You're out of the game!"
     isAlive = false
+    }
+    messageEl.textContent = message
 }
 
+function newCard() {
+    let card = getRandomCard()
+    sum += card
+    cards.push(card)
+    console.log(cards)
+    renderGame()
 }
-
-
-console.log(isAlive)
